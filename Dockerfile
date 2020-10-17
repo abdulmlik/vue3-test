@@ -8,8 +8,8 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY package*.json ./
-RUN npm install
+COPY Client/package*.json Client/
+RUN cd ./Client && npm install
 
 # RUN npm install @vue/cli@4.5.0 -g
 COPY . .
