@@ -3,9 +3,8 @@ import os
 
 
 app = Flask(__name__,
-            static_folder=os.path.join('./dist'),
-            template_folder=os.path.join('./dist'))
-
+            static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)),'dist'),
+            template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)),'dist'))
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
