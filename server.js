@@ -3,7 +3,7 @@ const path = require("path");
 var history = require("connect-history-api-fallback");
 let app = express();
 app.use(history());
-app.use(express.static(path.join(__dirname, "client-side", "dist")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("*", (req, res) => {
   res.sendFile("index.html");
